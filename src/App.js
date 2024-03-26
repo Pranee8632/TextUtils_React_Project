@@ -29,14 +29,14 @@ function App() {
       setTextMode('light');
       document.body.style.backgroundColor='#042743';
       showAlert("Dark Mode has been enabled","success");
-      document.title="TextUtils - Dark Mode";
+      // document.title="TextUtils - Dark Mode";
     }
     else{
       setMode('light');
       setTextMode('dark');
       document.body.style.backgroundColor='white';
       showAlert("Light Mode has been enabled","success");
-      document.title="TextUtils - Light Mode";
+      // document.title="TextUtils - Light Mode";
     }
   }
   return (
@@ -46,13 +46,13 @@ function App() {
       <Alert alert={alert} />
       <div className="container my-3">
         {/* exact is used because it is better option to use it with the path for the finding of the exact path or else it will do the partial path */}
-        {/* <About /> */}
+        {/* <About mode={mode}/> */}
         <TextForm heading="Enter text to analyze"  mode={mode} showAlert={showAlert} />
 
         {/* <Routes>
-          <Route exact path="/about" element={<About />}>
+          <Route exact path="/about" element={<About  mode={mode}/>}>
           </Route>
-          <Route exact path="/" element={<TextForm heading="Enter text to analyze"  mode={mode} showAlert={showAlert} />}>
+          <Route exact path="/" element={<TextForm heading=" Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces"  mode={mode} showAlert={showAlert} />}>
           </Route>
         </Routes> */}
       </div>

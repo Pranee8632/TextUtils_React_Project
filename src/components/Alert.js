@@ -7,8 +7,13 @@ export default function Alert(props) {
     }
   return (
     //initially alert is null
-    props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
-        <strong>{capitalize(props.alert.type)}</strong>:{props.alert.msg}
+
+    // cummulative layout shift -> when it is coming the below layout is shifting its position ->this shouldn't happen so we are trying to reduce this kind of changes by fixing it in a div tag with some specific height
+    <div style={{height:'50px'}}>  
+      {props.alert && <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+      <strong>{capitalize(props.alert.type)}</strong>:{props.alert.msg} </div> }
+     
+
       {/* <button
         type="button"
         class="btn-close"
